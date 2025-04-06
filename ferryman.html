@@ -63,16 +63,16 @@
     .watch-link a:hover {
       color: #000;
     }
-    .slideshow-container {
-      max-width: 800px;
-      margin: 0 auto;
-      position: relative;
+    .sub-images {
+      display: flex;
+      justify-content: center;
+      gap: 1.5em;
+      flex-wrap: wrap;
+      margin: 2em auto;
+      max-width: 1000px;
     }
-    .slide {
-      display: none;
-      width: 100%;
-    }
-    .slide img {
+    .sub-images img {
+      max-width: 30%;
       width: 100%;
       border-radius: 6px;
     }
@@ -103,28 +103,11 @@
   <div class="watch-link">
     <a href="https://vimeo.com/793845041" target="_blank">→ Watch the full film on Vimeo</a>
   </div>
-  <div class="slideshow-container">
-    <div class="slide"><img src="ferryman-1.png" alt="Still 1 from Ferryman"></div>
-    <div class="slide"><img src="ferryman-2.png" alt="Still 2 from Ferryman"></div>
-    <div class="slide"><img src="ferryman-3.png" alt="Still 3 from Ferryman"></div>
-    <div class="slide"><img src="ferryman-4.png" alt="Still 4 from Ferryman"></div>
+  <div class="sub-images">
+    <img src="ferryman-1.png" alt="Still 1 from Ferryman">
+    <img src="ferryman-2.png" alt="Still 2 from Ferryman">
+    <img src="ferryman-3.png" alt="Still 3 from Ferryman">
   </div>
-  <script>
-    let slideIndex = 0;
-    const slides = document.getElementsByClassName("slide");
-
-    function showSlides() {
-      for (let i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-      }
-      slideIndex++;
-      if (slideIndex > slides.length) { slideIndex = 1; }
-      slides[slideIndex - 1].style.display = "block";
-      setTimeout(showSlides, 4000); // Change image every 4 seconds
-    }
-
-    window.onload = showSlides;
-  </script>
   <div class="back">
     <a href="index.html">← Back to Home</a>
   </div>
