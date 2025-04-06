@@ -3,124 +3,64 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Yue RAN</title>
+  <title>Hui Xiang Ou Ji</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      width: 100%;
-      font-family: 'Playfair Display', serif;
-      color: black;
-      text-align: center;
-      overflow: hidden;
-    }
     body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    .background-video {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      z-index: -2;
-    }
-    .noise-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-image: url('https://grainy-gradients.vercel.app/noise.svg');
-      opacity: 0.2;
-      z-index: -1;
-    }
-    .content {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      z-index: 1;
-      padding-bottom: 2em;
+      margin: 0;
+      padding: 3em 2em;
+      font-family: 'Playfair Display', serif;
+      background-color: #f7f6f3;
+      color: #111;
+      line-height: 1.6;
     }
     h1 {
-      font-size: 5em;
-      margin: 0;
-      letter-spacing: 0.1em;
-      font-weight: 700;
+      font-size: 3em;
+      margin-bottom: 0.2em;
     }
     .subtitle {
-      font-size: 1.6em;
-      margin: 0.5em 0 2em 0;
-      font-weight: 400;
-    }
-    .nav {
       font-size: 1.2em;
-      display: flex;
-      gap: 3em;
-      position: relative;
+      margin-bottom: 2em;
+      color: #444;
     }
-    .nav a, .nav span {
-      cursor: pointer;
-      text-decoration: none;
-      color: black;
-      position: relative;
+    .synopsis {
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 1.1em;
     }
-    .submenu {
-      display: none;
-      position: absolute;
-      top: 1.8em;
-      left: 0;
-      flex-direction: column;
-      font-size: 0.8em;
-      margin-top: 0.5em;
-      text-align: left;
-      white-space: nowrap;
-      padding-left: 0.2em;
+    .still-image {
+      display: block;
+      margin: 2em auto;
+      max-width: 90%;
+      height: auto;
+      border-radius: 4px;
     }
-    .submenu a {
-      text-decoration: none;
-      color: black;
-      margin: 0.2em 0;
+    .credit-line {
+      text-align: center;
+      font-size: 0.9em;
+      margin-bottom: 3em;
+      color: #555;
     }
-    .submenu a:hover {
+    a {
+      color: #333;
       text-decoration: underline;
+    }
+    a:hover {
+      color: #000;
     }
   </style>
 </head>
 <body>
-  <video class="background-video" autoplay loop muted playsinline>
-    <source src="benches_in_zurich%20(1080p)%20small.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-  <div class="noise-overlay"></div>
-  <div class="content">
-    <h1>Yue RAN</h1>
-    <div class="subtitle">Director, Editor, Screenwriter</div>
-    <div class="nav">
-      <span onclick="toggleSubmenu()" id="filmsToggle">Films
-        <div class="submenu" id="filmSubmenu">
-          <a href="#hui-xiang-ou-ji">Hui Xiang Ou Ji</a>
-          <a href="#ferryman">Ferryman</a>
-          <a href="#cupboard-girl">Cupboard Girl</a>
-        </div>
-      </span>
-      <a href="#projects">Projects</a>
-      <a href="#about">About</a>
-    </div>
+  <h1>Hui Xiang Ou Ji</h1>
+  <div class="subtitle">Switzerland, 20’, 2025, Documentary</div>
+  <div class="synopsis credit-line">Writer / Director / Editor</div>
+  <img class="still-image" src="final%20cut%20uncolor%201008.00_12_29_03.Still001.png" alt="Still from Hui Xiang Ou Ji">
+  <div class="synopsis">
+    After marrying her same-sex partner in Switzerland, Chinese director Yue returns home to film her interactions with her mother. Struggling to understand her daughter’s sexual orientation, the mother searches for answers. But an unexpected event makes the mother reflect on her own marriage, leading the estranged mother and daughter to finally start to have an honest conversation.
   </div>
-
-  <script>
-    function toggleSubmenu() {
-      const submenu = document.getElementById("filmSubmenu");
-      submenu.style.display = submenu.style.display === "flex" ? "none" : "flex";
-    }
-  </script>
+  <br>
+  <div class="synopsis">
+    <a href="index.html">← Back to Home</a>
+  </div>
 </body>
 </html>
