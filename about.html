@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
   <style>
@@ -13,6 +13,11 @@
       background-color: #f7f6f3;
       color: #111;
       line-height: 1.6;
+    }
+    h1 {
+      font-size: 2.5em;
+      text-align: center;
+      margin-bottom: 0.5em;
     }
     .nav {
       text-align: center;
@@ -50,31 +55,27 @@
       text-decoration: underline;
     }
     .about-section {
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      gap: 2em;
-      flex-wrap: wrap;
-      max-width: 1000px;
+      max-width: 800px;
       margin: 0 auto;
+      text-align: center;
     }
-    .about-photo {
-      max-width: 300px;
-      border-radius: 6px;
+    .about-section img {
+      max-width: 200px;
+      border-radius: 100%;
+      margin-bottom: 1em;
     }
-    .bio {
-      max-width: 600px;
+    .about-section p {
       font-size: 1.1em;
       text-align: justify;
     }
-    .contact {
-      text-align: center;
-      margin-top: 3em;
+    .email {
+      margin-top: 2em;
       font-size: 1.1em;
+      text-align: center;
     }
-    .contact a {
-      text-decoration: underline;
+    .email a {
       color: #333;
+      text-decoration: underline;
     }
   </style>
   <script>
@@ -84,38 +85,3 @@
     }
     window.onclick = function(event) {
       const submenu = document.getElementById("filmSubmenu");
-      if (!event.target.matches('#filmsToggle')) {
-        if (submenu && submenu.style.display === "flex") {
-          submenu.style.display = "none";
-        }
-      }
-    }
-  </script>
-</head>
-<body>
-  <div class="nav">
-    <a href="index.html">Home</a>
-    <span onclick="toggleSubmenu()" id="filmsToggle">Films</span>
-    <div class="submenu" id="filmSubmenu">
-      <a href="hui-xiang-ou-ji.html">Hui Xiang Ou Ji</a>
-      <a href="ferryman.html">Ferryman</a>
-      <a href="cupboard-girl.html">Cupboard Girl</a>
-    </div>
-    <a href="index.html#projects">Projects</a>
-    <a href="about.html">About</a>
-  </div>
-
-  <div class="about-section">
-    <img src="Yue-pic.JPG" alt="Portrait of Yue Ran" class="about-photo">
-    <div class="bio">
-      <p><strong>Yue Ran</strong> was born in 1995 in Chongqing, China. She graduated with a bachelor's degree from Sophia University in Japan and obtained a master's degree in screenwriting and film production at the Catholic University of the Sacred Heart in Milan. Yue has extensive experience in screenwriting for female-centric films and has written and directed several short films.</p>
-      <p>With cultural backgrounds from China, Japan, France, and Italy, she has developed a strong ability to tell cross-cultural female narratives. She is currently active as a director and editor in Paris and Zurich.</p>
-    </div>
-  </div>
-
-  <div class="contact">
-    📧 <a href="mailto:ranyue.ray@gamil.com">ranyue.ray@gamil.com</a><br>
-    Feel free to reach out for collaboration or just to say hi.
-  </div>
-</body>
-</html>
