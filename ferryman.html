@@ -34,14 +34,36 @@
     .nav {
       text-align: center;
       margin-bottom: 2em;
+      position: relative;
     }
-    .nav a {
+    .nav a, .nav span {
       margin: 0 1em;
       text-decoration: none;
       color: #333;
       font-weight: bold;
+      cursor: pointer;
+      position: relative;
     }
-    .nav a:hover {
+    .nav a:hover, .nav span:hover {
+      text-decoration: underline;
+    }
+    .submenu {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 2em;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #f7f6f3;
+      padding: 0.5em 1em;
+      border: 1px solid #ccc;
+      z-index: 10;
+    }
+    .submenu a {
+      margin: 0.2em 0;
+      font-weight: normal;
+    }
+    .submenu a:hover {
       text-decoration: underline;
     }
     .content-section {
@@ -105,11 +127,29 @@
       }
     }
   </style>
+  <script>
+    function toggleSubmenu() {
+      const submenu = document.getElementById("filmSubmenu");
+      submenu.style.display = submenu.style.display === "flex" ? "none" : "flex";
+    }
+    window.onclick = function(event) {
+      const submenu = document.getElementById("filmSubmenu");
+      if (!event.target.matches('#filmsToggle')) {
+        if (submenu && submenu.style.display === "flex") {
+          submenu.style.display = "none";
+        }
+      }
+    }
+  </script>
 </head>
 <body>
   <div class="nav">
-    <a href="index.html">Home</a>
-    <a href="index.html#films">Films</a>
+    <span onclick="toggleSubmenu()" id="filmsToggle">Films</span>
+    <div class="submenu" id="filmSubmenu">
+      <a href="hui-xiang-ou-ji.html">Hui Xiang Ou Ji</a>
+      <a href="ferryman.html">Ferryman</a>
+      <a href="cupboard-girl.html">Cupboard Girl</a>
+    </div>
     <a href="index.html#projects">Projects</a>
     <a href="index.html#about">About</a>
   </div>
