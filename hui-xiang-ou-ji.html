@@ -31,18 +31,25 @@
       margin-bottom: 2em;
       color: #555;
     }
+    .content-section {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 2em;
+      max-width: 1200px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+    }
     .still-image {
-      display: block;
-      margin: 2em auto;
       max-width: 45%;
       height: auto;
       border-radius: 6px;
     }
     .synopsis {
-      max-width: 700px;
-      margin: 0 auto;
+      flex: 1 1 45%;
       font-size: 1.1em;
       text-align: justify;
+      max-width: 700px;
     }
     .back {
       text-align: center;
@@ -62,9 +69,11 @@
   <div class="subtitle">(My Dear Dear Home)</div>
   <div class="subtitle">Switzerland, 20’, 2025, Documentary</div>
   <div class="credit-line">Writer / Director / Editor</div>
-  <img class="still-image" src="hui-xiang-still.png" alt="Still from Hui Xiang Ou Ji">
-  <div class="synopsis">
-    After marrying her same-sex partner in Switzerland, Chinese director Yue returns home to film her interactions with her mother. Struggling to understand her daughter’s sexual orientation, the mother searches for answers. But an unexpected event makes the mother reflect on her own marriage, leading the estranged mother and daughter to finally start to have an honest conversation.
+  <div class="content-section">
+    <img class="still-image" src="hui-xiang-still.png" alt="Still from Hui Xiang Ou Ji">
+    <div class="synopsis">
+      After marrying her same-sex partner in Switzerland, Chinese director Yue returns home to film her interactions with her mother. Struggling to understand her daughter’s sexual orientation, the mother searches for answers. But an unexpected event makes the mother reflect on her own marriage, leading the estranged mother and daughter to finally start to have an honest conversation.
+    </div>
   </div>
   <div class="back">
     <a href="index.html">← Back to Home</a>
