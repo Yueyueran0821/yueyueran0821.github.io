@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cupboard Girl</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
   <style>
@@ -79,32 +79,25 @@
     }
     .sub-photos {
       display: flex;
-      flex-wrap: wrap;
       justify-content: center;
       gap: 1em;
-      margin-bottom: 3em;
+      flex-wrap: wrap;
+      margin-bottom: 2em;
     }
     .sub-photos img {
-      max-width: 30%;
+      max-width: 200px;
+      width: 100%;
       height: auto;
       border-radius: 4px;
     }
     .watch-link {
       text-align: center;
-      margin-bottom: 3em;
+      margin-top: 1em;
     }
     .watch-link a {
       color: #333;
-      text-decoration: underline;
       font-weight: bold;
-    }
-    .watch-link a:hover {
-      color: #000;
-    }
-    @media (max-width: 768px) {
-      .sub-photos img {
-        max-width: 45%;
-      }
+      text-decoration: underline;
     }
   </style>
   <script>
@@ -123,7 +116,6 @@
   </script>
 </head>
 <body>
-
   <div class="nav">
     <a href="index.html">Home</a>
     <span onclick="toggleSubmenu()" id="filmsToggle">Films</span>
@@ -137,14 +129,15 @@
   </div>
 
   <h1>Cupboard Girl</h1>
-  <div class="meta">(Japan, 16’, Fiction)</div>
+  <div class="meta">Japan, 16’, Fiction</div>
   <div class="meta">Writer / Director</div>
-  <img class="main-photo" src="cupboard-1.jpg" alt="Cupboard Girl main still">
+
+  <img class="main-photo" src="cupboard-1.jpg" alt="Main still from Cupboard Girl">
 
   <div class="sub-photos">
-    <img src="cupboard-2.jpg" alt="Cupboard Girl still 2">
-    <img src="cupboard-3.jpg" alt="Cupboard Girl still 3">
-    <img src="cupboard-4.jpg" alt="Cupboard Girl still 4">
+    <img src="cupboard-2.jpg" alt="Still from Cupboard Girl">
+    <img src="cupboard-3.jpg" alt="Still from Cupboard Girl">
+    <img src="cupboard-4.jpg" alt="Still from Cupboard Girl">
   </div>
 
   <div class="synopsis">
@@ -152,8 +145,7 @@
   </div>
 
   <div class="watch-link">
-    <a href="https://vimeo.com/393573457" target="_blank">Watch on Vimeo</a>
+    <a href="https://vimeo.com/393573457" target="_blank">→ Watch the Film</a>
   </div>
-
 </body>
 </html>
