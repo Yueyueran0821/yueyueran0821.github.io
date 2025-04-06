@@ -24,7 +24,8 @@
       align-items: center;
     }
 
-    .background-video {
+    .background-video,
+    .background-gif {
       position: fixed;
       top: 0;
       left: 0;
@@ -33,6 +34,10 @@
       object-fit: cover;
       z-index: -3;
       filter: contrast(1.1) brightness(0.9) saturate(1.2);
+    }
+
+    .background-gif {
+      display: none;
     }
 
     .noise-overlay, .vignette-overlay {
@@ -134,10 +139,14 @@
   </style>
 </head>
 <body class="flicker">
+  <!-- Primary Video -->
   <video class="background-video" autoplay loop muted playsinline id="mainVideo">
     <source src="benches_vintage_compressed.mp4" type="video/mp4" />
     Your browser does not support the video tag.
   </video>
+
+  <!-- GIF fallback -->
+  <img src="benches_fallback-ezgif.com-video-to-gif-converter.gif" alt="Fallback background" class="background-gif" id="fallbackGif" />
 
   <div class="noise-overlay"></div>
   <div class="vignette-overlay"></div>
@@ -173,16 +182,13 @@
       }
     }
 
+    // Fallback to GIF if video fails
     const video = document.getElementById("mainVideo");
+    const gif = document.getElementById("fallbackGif");
+
     video.play().catch(() => {
-      video.innerHTML = `
-        <source src="benches_fallback.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      `;
-      video.load();
-      video.play().catch(() => {
-        console.log("Fallback video also failed.");
-      });
+      video.style.display = "none";
+      gif.style.display = "block";
     });
   </script>
 </body>
