@@ -61,4 +61,61 @@
     }
     .about-section img {
       max-width: 200px;
-      border-radius: 100
+      border-radius: 100%;
+      margin-bottom: 1em;
+    }
+    .about-section p {
+      font-size: 1.1em;
+      text-align: justify;
+    }
+    .email {
+      margin-top: 2em;
+      font-size: 1.1em;
+      text-align: center;
+    }
+    .email a {
+      color: #333;
+      text-decoration: underline;
+    }
+  </style>
+  <script>
+    function toggleSubmenu() {
+      const submenu = document.getElementById("filmSubmenu");
+      submenu.style.display = submenu.style.display === "flex" ? "none" : "flex";
+    }
+    window.onclick = function(event) {
+      const submenu = document.getElementById("filmSubmenu");
+      if (!event.target.matches('#filmsToggle')) {
+        if (submenu && submenu.style.display === "flex") {
+          submenu.style.display = "none";
+        }
+      }
+    }
+  </script>
+</head>
+<body>
+  <div class="nav">
+    <a href="index.html">Home</a>
+    <span onclick="toggleSubmenu()" id="filmsToggle">Films</span>
+    <div class="submenu" id="filmSubmenu">
+      <a href="hui-xiang-ou-ji.html">Hui Xiang Ou Ji</a>
+      <a href="ferryman.html">Ferryman</a>
+      <a href="cupboard-girl.html">Cupboard Girl</a>
+    </div>
+    <a href="projects.html">Projects</a>
+    <a href="about.html">About</a>
+  </div>
+
+  <h1>About</h1>
+
+  <div class="about-section">
+    <img src="Yue-pic.JPG" alt="Portrait of Yue Ran">
+    <p>
+      Born in 1995 in Chongqing, China. Yue Ran graduated with a bachelor's degree from Sophia University in Japan and obtained a master's degree in screenwriting and film production at the Catholic University of the Sacred Heart in Milan. She has extensive experience in screenwriting for female-centric films and wrote and directed several short films. With cultural backgrounds from China, Japan, France, and Italy, she has developed a strong ability to tell cross-cultural female narratives. She is currently active as a director and editor in Paris and Zurich.
+    </p>
+    <div class="email">
+      Contact: <a href="mailto:ranyue.ray@gmail.com">ranyue.ray@gmail.com</a>
+    </div>
+  </div>
+</body>
+</html>
