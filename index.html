@@ -147,44 +147,4 @@
     <div class="subtitle">Director, Editor, Screenwriter</div>
     <div class="nav">
       <span onclick="toggleSubmenu()" id="filmsToggle">Films
-        <div class="submenu" id="filmSubmenu">
-          <a href="hui-xiang-ou-ji.html">Hui Xiang Ou Ji</a>
-          <a href="ferryman.html">Ferryman</a>
-          <a href="cupboard-girl.html">Cupboard Girl</a>
-        </div>
-      </span>
-      <a href="projects.html">Projects</a>
-      <a href="about.html">About</a>
-    </div>
-  </div>
-
-  <script>
-    function toggleSubmenu() {
-      const submenu = document.getElementById("filmSubmenu");
-      submenu.style.display = submenu.style.display === "flex" ? "none" : "flex";
-    }
-
-    window.onclick = function(event) {
-      const submenu = document.getElementById("filmSubmenu");
-      if (!event.target.matches('#filmsToggle')) {
-        if (submenu && submenu.style.display === "flex") {
-          submenu.style.display = "none";
-        }
-      }
-    }
-
-    // Fallback video if the first fails
-    const video = document.getElementById("mainVideo");
-    video.play().catch(() => {
-      video.innerHTML = `
-        <source src="benches_fallback.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      `;
-      video.load();
-      video.play().catch(() => {
-        console.log("Fallback video also failed.");
-      });
-    });
-  </script>
-</body>
-</html>
+        <div class
