@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yue RAN</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: Georgia, serif;
+      color: black;
+      text-align: center;
+    }
+    .background-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -2;
+    }
+    .noise-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('https://grainy-gradients.vercel.app/noise.svg');
+      opacity: 0.2;
+      z-index: -1;
+    }
+    .content {
+      position: relative;
+      top: 30%;
+      transform: translateY(-30%);
+    }
+    h1 {
+      font-size: 3em;
+      margin: 0;
+    }
+    .subtitle {
+      font-size: 1.2em;
+      margin: 0.5em 0 2em 0;
+    }
+    .nav {
+      font-size: 1em;
+    }
+    .nav a, .nav span {
+      margin: 0 1em;
+      cursor: pointer;
+      text-decoration: none;
+      color: black;
+    }
+    .submenu {
+      margin-top: 1em;
+      display: none;
+      flex-direction: column;
+      gap: 0.4em;
+    }
+    .submenu a {
+      text-decoration: none;
+      color: black;
+    }
+    .submenu a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <iframe class="background-video" src="https://player.vimeo.com/video/1003104360?background=1&autoplay=1&loop=1&byline=0&title=0" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+  <div class="noise-overlay"></div>
+  <div class="content">
+    <h1>Yue RAN</h1>
+    <div class="subtitle">Director, Editor, Screenwriter</div>
+    <div class="nav">
+      <span onclick="toggleSubmenu()">Films</span>
+      <a href="#projects">Projects</a>
+      <a href="#about">About</a>
+      <div class="submenu" id="filmSubmenu">
+        <a href="#hui-xiang-ou-ji">Hui Xiang Ou Ji</a>
+        <a href="#ferryman">Ferryman</a>
+        <a href="#cupboard-girl">Cupboard Girl</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleSubmenu() {
+      const submenu = document.getElementById("filmSubmenu");
+      if (submenu.style.display === "flex") {
+        submenu.style.display = "none";
+      } else {
+        submenu.style.display = "flex";
+      }
+    }
+  </script>
+</body>
+</html>
