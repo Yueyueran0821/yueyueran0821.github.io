@@ -14,6 +14,23 @@
       color: #111;
       line-height: 1.6;
     }
+    h1 {
+      font-size: 3em;
+      margin-bottom: 0.2em;
+      text-align: center;
+    }
+    .subtitle {
+      font-size: 1.2em;
+      margin-bottom: 0.5em;
+      color: #444;
+      text-align: center;
+    }
+    .credit-line {
+      text-align: center;
+      font-size: 0.95em;
+      margin-bottom: 2em;
+      color: #555;
+    }
     .nav {
       text-align: center;
       margin-bottom: 2em;
@@ -49,55 +66,65 @@
     .submenu a:hover {
       text-decoration: underline;
     }
-    h1 {
-      text-align: center;
-      font-size: 2.5em;
-      margin-bottom: 0.2em;
-    }
-    .subtitle, .meta, .synopsis {
-      text-align: center;
-      margin-bottom: 1em;
-    }
-    .meta {
-      font-style: italic;
-      font-size: 1em;
-      color: #444;
-    }
-    .synopsis {
-      max-width: 700px;
-      margin: 0 auto 2em auto;
-      font-size: 1.1em;
-      text-align: justify;
-    }
-    .main-photo {
-      display: block;
-      margin: 2em auto 1.5em auto;
-      max-width: 700px;
-      width: 90%;
-      height: auto;
-      border-radius: 4px;
-    }
-    .sub-photos {
+    .content-section {
       display: flex;
       justify-content: center;
-      gap: 1em;
+      align-items: flex-start;
+      gap: 2em;
+      max-width: 1200px;
+      margin: 0 auto 3em auto;
       flex-wrap: wrap;
-      margin-bottom: 2em;
     }
-    .sub-photos img {
-      max-width: 200px;
-      width: 100%;
+    .still-image {
+      max-width: 45%;
       height: auto;
-      border-radius: 4px;
+      border-radius: 6px;
+    }
+    .synopsis {
+      flex: 1 1 45%;
+      font-size: 1.1em;
+      text-align: justify;
+      max-width: 700px;
     }
     .watch-link {
       text-align: center;
-      margin-top: 1em;
+      margin: 2em 0;
+      font-size: 1.1em;
     }
     .watch-link a {
       color: #333;
-      font-weight: bold;
       text-decoration: underline;
+    }
+    .watch-link a:hover {
+      color: #000;
+    }
+    .sub-images {
+      display: flex;
+      justify-content: center;
+      gap: 1.5em;
+      flex-wrap: wrap;
+      margin: 2em auto;
+      max-width: 1000px;
+    }
+    .sub-images img {
+      max-width: 30%;
+      min-width: 100px;
+      width: 30vw;
+      border-radius: 6px;
+    }
+    @media (max-width: 768px) {
+      .content-section {
+        flex-direction: column;
+        align-items: center;
+      }
+      .still-image, .synopsis {
+        max-width: 90%;
+        width: 100%;
+      }
+      .sub-images img {
+        width: 80vw;
+        max-width: 80%;
+      }
     }
   </style>
   <script>
@@ -130,22 +157,24 @@
 
   <h1>Cupboard Girl</h1>
   <div class="subtitle">(Cupboard Girl)</div>
-  <div class="meta">Japan, 16’, Fiction</div>
-  <div class="meta">Writer / Director</div>
-  <img class="main-photo" src="cupboard-1.jpg" alt="Main still from Cupboard Girl">
+  <div class="subtitle">Japan, 16’, Fiction</div>
+  <div class="credit-line">Writer / Director</div>
 
-  <div class="synopsis">
-    Tsuki is a teenage girl whose overprotective mother still treats her like a baby. Her comfortable existence has left Tsuki with a complete lack of social and survival skills. When her mother meets a man, Tsuki has to grow up quickly but when her mother abandons her, she takes refuge in a womb-like cupboard. Increasingly unable to distinguish reality from nightmare Tsuki's world starts to fragment with terrifying consequences.
+  <div class="content-section">
+    <img class="still-image" src="cupboard-1.jpg" alt="Still from Cupboard Girl">
+    <div class="synopsis">
+      Tsuki is a teenage girl whose overprotective mother still treats her like a baby. Her comfortable existence has left Tsuki with a complete lack of social and survival skills. When her mother meets a man, Tsuki has to grow up quickly but when her mother abandons her, she takes refuge in a womb-like cupboard. Increasingly unable to distinguish reality from nightmare Tsuki's world starts to fragment with terrifying consequences.
+    </div>
   </div>
 
   <div class="watch-link">
-    <a href="https://vimeo.com/393573457" target="_blank">⇀ Watch the full film on Vimeo</a>
+    <a href="https://vimeo.com/393573457" target="_blank">→ Watch the full film on Vimeo</a>
   </div>
 
-  <div class="sub-photos">
-    <img src="cupboard-2.jpg" alt="Cupboard Girl still 2">
-    <img src="cupboard-3.jpg" alt="Cupboard Girl still 3">
-    <img src="cupboard-4.jpg" alt="Cupboard Girl still 4">
+  <div class="sub-images">
+    <img src="cupboard-2.jpg" alt="Still 2 from Cupboard Girl">
+    <img src="cupboard-3.jpg" alt="Still 3 from Cupboard Girl">
+    <img src="cupboard-4.jpg" alt="Still 4 from Cupboard Girl">
   </div>
 </body>
 </html>
