@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cupboard Girl</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 3em 2em;
+      font-family: 'Playfair Display', serif;
+      background-color: #f7f6f3;
+      color: #111;
+      line-height: 1.6;
+    }
+    h1 {
+      font-size: 3em;
+      margin-bottom: 0.2em;
+      text-align: center;
+    }
+    .subtitle {
+      font-size: 1.2em;
+      margin-bottom: 0.5em;
+      color: #444;
+      text-align: center;
+    }
+    .credit-line {
+      text-align: center;
+      font-size: 0.95em;
+      margin-bottom: 2em;
+      color: #555;
+    }
+    .nav {
+      text-align: center;
+      margin-bottom: 2em;
+      position: relative;
+    }
+    .nav a, .nav span {
+      margin: 0 1em;
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+      cursor: pointer;
+      position: relative;
+    }
+    .nav a:hover, .nav span:hover {
+      text-decoration: underline;
+    }
+    .submenu {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 2em;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #f7f6f3;
+      padding: 0.5em 1em;
+      border: 1px solid #ccc;
+      z-index: 10;
+    }
+    .submenu a {
+      margin: 0.2em 0;
+      font-weight: normal;
+    }
+    .submenu a:hover {
+      text-decoration: underline;
+    }
+    .content-section {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 2em;
+      max-width: 1200px;
+      margin: 0 auto 3em auto;
+      flex-wrap: wrap;
+    }
+    .still-image {
+      max-width: 45%;
+      height: auto;
+      border-radius: 6px;
+    }
+    .synopsis {
+      flex: 1 1 45%;
+      font-size: 1.1em;
+      text-align: justify;
+      max-width: 700px;
+    }
+    .watch-link {
+      text-align: center;
+      margin: 2em 0;
+      font-size: 1.1em;
+    }
+    .watch-link a {
+      color: #333;
+      text-decoration: underline;
+    }
+    .watch-link a:hover {
+      color: #000;
+    }
+    .sub-images {
+      display: flex;
+      justify-content: center;
+      gap: 1.5em;
+      flex-wrap: wrap;
+      margin: 2em auto;
+      max-width: 1000px;
+    }
+    .sub-images img {
+      max-width: 30%;
+      min-width: 100px;
+      width: 30vw;
+      border-radius: 6px;
+    }
+    .home-link {
+      text-align: center;
+      margin-top: 2em;
+      font-size: 1em;
+    }
+    .home-link a {
+      text-decoration: underline;
+      color: #333;
+    }
+    @media (max-width: 768px) {
+      .content-section {
+        flex-direction: column;
+        align-items: center;
+      }
+      .still-image, .synopsis {
+        max-width: 90%;
+        width: 100%;
+      }
+      .sub-images img {
+        width: 80vw;
+        max-width: 80%;
+      }
+    }
+  </style>
+  <script>
+    function toggleSubmenu() {
+      const submenu = document.getElementById("filmSubmenu");
+      submenu.style.display = submenu.style.display === "flex" ? "none" : "flex";
+    }
+    window.onclick = function(event) {
+      const submenu = document.getElementById("filmSubmenu");
+      if (!event.target.matches('#filmsToggle')) {
+        if (submenu && submenu.style.display === "flex") {
+          submenu.style.display = "none";
+        }
+      }
+    }
+  </script>
+</head>
+<body>
+  <div class="nav">
+    <a href="index.html">Home</a>
+    <span onclick="toggleSubmenu()" id="filmsToggle">Films</span>
+    <div class="submenu" id="filmSubmenu">
+      <a href="hui-xiang-ou-ji.html">Hui Xiang Ou Ji</a>
+      <a href="ferryman.html">Ferryman</a>
+      <a href="cupboard-girl.html">Cupboard Girl</a>
+    </div>
+    <a href="index.html#projects">Projects</a>
+    <a href="index.html#about">About</a>
+  </div>
+  <h1>Cupboard Girl</h1>
+  <div class="subtitle">Switzerland, Short Film</div>
+  <div class="credit-line">Writer / Director</div>
+  <div class="content-section">
+    <img class="still-image" src="cupboard-4.jpg" alt="Main still from Cupboard Girl">
+    <div class="synopsis">
+      Tsuki is a teenage girl whose overprotective mother still treats her like a baby. Her comfortable existence has left Tsuki with a complete lack of social and survival skills. When her mother meets a man, Tsuki has to grow up quickly but when her mother abandons her, she takes refuge in a womb-like cupboard. Increasingly unable to distinguish reality from nightmare Tsuki's world starts to fragment with terrifying consequences.
+    </div>
+  </div>
+  <div class="watch-link">
+    <a href="https://vimeo.com/393573457" target="_blank">→ Watch the full film on Vimeo</a>
+  </div>
+  <div class="sub-images">
+    <img src="cupboard-1.jpg" alt="Still 1 from Cupboard Girl">
+    <img src="cupboard-2.jpg" alt="Still 2 from Cupboard Girl">
+    <img src="cupboard-3.jpg" alt="Still 3 from Cupboard Girl">
+  </div>
+</body>
+</html>
