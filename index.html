@@ -3,64 +3,124 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hui Xiang Ou Ji</title>
+  <title>Yue RAN</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    body {
+    html, body {
       margin: 0;
-      padding: 3em 2em;
+      padding: 0;
+      height: 100%;
+      width: 100%;
       font-family: 'Playfair Display', serif;
-      background-color: #f7f6f3;
-      color: #111;
-      line-height: 1.6;
+      color: black;
+      text-align: center;
+      overflow: hidden;
+    }
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .background-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -2;
+    }
+    .noise-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('https://grainy-gradients.vercel.app/noise.svg');
+      opacity: 0.2;
+      z-index: -1;
+    }
+    .content {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 1;
+      padding-bottom: 2em;
     }
     h1 {
-      font-size: 3em;
-      margin-bottom: 0.2em;
+      font-size: 5em;
+      margin: 0;
+      letter-spacing: 0.1em;
+      font-weight: 700;
     }
     .subtitle {
+      font-size: 1.6em;
+      margin: 0.5em 0 2em 0;
+      font-weight: 400;
+    }
+    .nav {
       font-size: 1.2em;
-      margin-bottom: 2em;
-      color: #444;
+      display: flex;
+      gap: 3em;
+      position: relative;
     }
-    .synopsis {
-      max-width: 700px;
-      margin: 0 auto;
-      font-size: 1.1em;
+    .nav a, .nav span {
+      cursor: pointer;
+      text-decoration: none;
+      color: black;
+      position: relative;
     }
-    .still-image {
-      display: block;
-      margin: 2em auto;
-      max-width: 90%;
-      height: auto;
-      border-radius: 4px;
+    .submenu {
+      display: none;
+      position: absolute;
+      top: 1.8em;
+      left: 0;
+      flex-direction: column;
+      font-size: 0.8em;
+      margin-top: 0.5em;
+      text-align: left;
+      white-space: nowrap;
+      padding-left: 0.2em;
     }
-    .credit-line {
-      text-align: center;
-      font-size: 0.9em;
-      margin-bottom: 3em;
-      color: #555;
+    .submenu a {
+      text-decoration: none;
+      color: black;
+      margin: 0.2em 0;
     }
-    a {
-      color: #333;
+    .submenu a:hover {
       text-decoration: underline;
-    }
-    a:hover {
-      color: #000;
     }
   </style>
 </head>
 <body>
-  <h1>Hui Xiang Ou Ji</h1>
-  <div class="subtitle">Switzerland, 20’, 2025, Documentary</div>
-  <div class="synopsis credit-line">Writer / Director / Editor</div>
-  <img class="still-image" src="final%20cut%20uncolor%201008.00_12_29_03.Still001.png" alt="Still from Hui Xiang Ou Ji">
-  <div class="synopsis">
-    After marrying her same-sex partner in Switzerland, Chinese director Yue returns home to film her interactions with her mother. Struggling to understand her daughter’s sexual orientation, the mother searches for answers. But an unexpected event makes the mother reflect on her own marriage, leading the estranged mother and daughter to finally start to have an honest conversation.
+  <video class="background-video" autoplay loop muted playsinline>
+    <source src="benches_in_zurich (1080p) small.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <div class="noise-overlay"></div>
+  <div class="content">
+    <h1>Yue RAN</h1>
+    <div class="subtitle">Director, Editor, Screenwriter</div>
+    <div class="nav">
+      <span onclick="toggleSubmenu()" id="filmsToggle">Films
+        <div class="submenu" id="filmSubmenu">
+          <a href="hui-xiang-ou-ji.html">Hui Xiang Ou Ji</a>
+          <a href="ferryman.html">Ferryman</a>
+          <a href="cupboard-girl.html">Cupboard Girl</a>
+        </div>
+      </span>
+      <a href="#projects">Projects</a>
+      <a href="#about">About</a>
+    </div>
   </div>
-  <br>
-  <div class="synopsis">
-    <a href="index.html">← Back to Home</a>
-  </div>
+
+  <script>
+    function toggleSubmenu() {
+      const submenu = document.getElementById("filmSubmenu");
+      submenu.style.display = submenu.style.display === "flex" ? "none" : "flex";
+    }
+  </script>
 </body>
 </html>
