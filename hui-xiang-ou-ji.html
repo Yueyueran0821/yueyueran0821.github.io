@@ -31,13 +31,48 @@
       margin-bottom: 2em;
       color: #555;
     }
+    .nav {
+      text-align: center;
+      margin-bottom: 2em;
+      position: relative;
+    }
+    .nav a, .nav span {
+      margin: 0 1em;
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+      cursor: pointer;
+      position: relative;
+    }
+    .nav a:hover, .nav span:hover {
+      text-decoration: underline;
+    }
+    .submenu {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 2em;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #f7f6f3;
+      padding: 0.5em 1em;
+      border: 1px solid #ccc;
+      z-index: 10;
+    }
+    .submenu a {
+      margin: 0.2em 0;
+      font-weight: normal;
+    }
+    .submenu a:hover {
+      text-decoration: underline;
+    }
     .content-section {
       display: flex;
       justify-content: center;
       align-items: flex-start;
       gap: 2em;
       max-width: 1200px;
-      margin: 0 auto;
+      margin: 0 auto 3em auto;
       flex-wrap: wrap;
     }
     .still-image {
@@ -51,20 +86,44 @@
       text-align: justify;
       max-width: 700px;
     }
-    .back {
-      text-align: center;
-      margin-top: 3em;
-    }
-    a {
-      color: #333;
-      text-decoration: underline;
-    }
-    a:hover {
-      color: #000;
+    @media (max-width: 768px) {
+      .content-section {
+        flex-direction: column;
+        align-items: center;
+      }
+      .still-image, .synopsis {
+        max-width: 90%;
+        width: 100%;
+      }
     }
   </style>
+  <script>
+    function toggleSubmenu() {
+      const submenu = document.getElementById("filmSubmenu");
+      submenu.style.display = submenu.style.display === "flex" ? "none" : "flex";
+    }
+    window.onclick = function(event) {
+      const submenu = document.getElementById("filmSubmenu");
+      if (!event.target.matches('#filmsToggle')) {
+        if (submenu && submenu.style.display === "flex") {
+          submenu.style.display = "none";
+        }
+      }
+    }
+  </script>
 </head>
 <body>
+  <div class="nav">
+    <a href="index.html">Home</a>
+    <span onclick="toggleSubmenu()" id="filmsToggle">Films</span>
+    <div class="submenu" id="filmSubmenu">
+      <a href="hui-xiang-ou-ji.html">Hui Xiang Ou Ji</a>
+      <a href="ferryman.html">Ferryman</a>
+      <a href="cupboard-girl.html">Cupboard Girl</a>
+    </div>
+    <a href="index.html#projects">Projects</a>
+    <a href="index.html#about">About</a>
+  </div>
   <h1>Hui Xiang Ou Ji</h1>
   <div class="subtitle">(My Dear Dear Home)</div>
   <div class="subtitle">Switzerland, 20’, 2025, Documentary</div>
@@ -74,9 +133,6 @@
     <div class="synopsis">
       After marrying her same-sex partner in Switzerland, Chinese director Yue returns home to film her interactions with her mother. Struggling to understand her daughter’s sexual orientation, the mother searches for answers. But an unexpected event makes the mother reflect on her own marriage, leading the estranged mother and daughter to finally start to have an honest conversation.
     </div>
-  </div>
-  <div class="back">
-    <a href="index.html">← Back to Home</a>
   </div>
 </body>
 </html>
