@@ -8,8 +8,8 @@
     html, body {
       margin: 0;
       padding: 0;
-      height: 100vh;
-      width: 100vw;
+      height: 100%;
+      width: 100%;
       font-family: Georgia, serif;
       color: black;
       text-align: center;
@@ -24,8 +24,8 @@
       position: fixed;
       top: 0;
       left: 0;
-      width: 100vw;
-      height: 100vh;
+      width: 100%;
+      height: 100%;
       object-fit: cover;
       z-index: -2;
     }
@@ -33,8 +33,8 @@
       position: fixed;
       top: 0;
       left: 0;
-      width: 100vw;
-      height: 100vh;
+      width: 100%;
+      height: 100%;
       background-image: url('https://grainy-gradients.vercel.app/noise.svg');
       opacity: 0.2;
       z-index: -1;
@@ -45,6 +45,7 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      z-index: 1;
     }
     h1 {
       font-size: 3em;
@@ -67,18 +68,18 @@
       position: relative;
     }
     .submenu {
-      position: absolute;
-      top: 1.5em;
-      left: 0;
       display: none;
+      position: absolute;
+      top: 1.8em;
+      left: 0;
       flex-direction: column;
-      gap: 0.3em;
-      font-size: 0.85em;
-      text-align: left;
+      font-size: 0.8em;
+      margin-top: 0.5em;
     }
     .submenu a {
       text-decoration: none;
       color: black;
+      margin-top: 0.2em;
     }
     .submenu a:hover {
       text-decoration: underline;
@@ -95,28 +96,22 @@
     <h1>Yue RAN</h1>
     <div class="subtitle">Director, Editor, Screenwriter</div>
     <div class="nav">
-      <span onclick="toggleSubmenu()" id="filmsToggle">Films</span>
+      <span onclick="toggleSubmenu()" id="filmsToggle">Films
+        <div class="submenu" id="filmSubmenu">
+          <a href="#hui-xiang-ou-ji">Hui Xiang Ou Ji</a>
+          <a href="#ferryman">Ferryman</a>
+          <a href="#cupboard-girl">Cupboard Girl</a>
+        </div>
+      </span>
       <a href="#projects">Projects</a>
       <a href="#about">About</a>
-      <div class="submenu" id="filmSubmenu">
-        <a href="#hui-xiang-ou-ji">Hui Xiang Ou Ji</a>
-        <a href="#ferryman">Ferryman</a>
-        <a href="#cupboard-girl">Cupboard Girl</a>
-      </div>
     </div>
   </div>
 
   <script>
     function toggleSubmenu() {
       const submenu = document.getElementById("filmSubmenu");
-      if (submenu.style.display === "flex") {
-        submenu.style.display = "none";
-      } else {
-        submenu.style.display = "flex";
-        const toggle = document.getElementById("filmsToggle");
-        const rect = toggle.getBoundingClientRect();
-        submenu.style.left = rect.left + window.scrollX + "px";
-      }
+      submenu.style.display = submenu.style.display === "flex" ? "none" : "flex";
     }
   </script>
 </body>
