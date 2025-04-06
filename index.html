@@ -139,14 +139,14 @@
   </style>
 </head>
 <body class="flicker">
-  <!-- Primary Video -->
+  <!-- Video background (default) -->
   <video class="background-video" autoplay loop muted playsinline id="mainVideo">
     <source src="benches_vintage_compressed.mp4" type="video/mp4" />
     Your browser does not support the video tag.
   </video>
 
   <!-- GIF fallback -->
-  <img src="benches_fallback-ezgif.com-video-to-gif-converter.gif" alt="Fallback background" class="background-gif" id="fallbackGif" />
+  <img src="benches_fallback-ezgif.com-video-to-gif-converter.gif" alt="Animated fallback" class="background-gif" id="fallbackGif" />
 
   <div class="noise-overlay"></div>
   <div class="vignette-overlay"></div>
@@ -182,7 +182,7 @@
       }
     }
 
-    // Fallback to GIF if video fails
+    // Fallback to GIF if video fails to play
     const video = document.getElementById("mainVideo");
     const gif = document.getElementById("fallbackGif");
 
