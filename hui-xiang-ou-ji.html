@@ -14,23 +14,6 @@
       color: #111;
       line-height: 1.6;
     }
-    h1 {
-      font-size: 3em;
-      margin-bottom: 0.2em;
-      text-align: center;
-    }
-    .subtitle {
-      font-size: 1.2em;
-      margin-bottom: 0.5em;
-      color: #444;
-      text-align: center;
-    }
-    .credit-line {
-      text-align: center;
-      font-size: 0.95em;
-      margin-bottom: 2em;
-      color: #555;
-    }
     .nav {
       text-align: center;
       margin-bottom: 2em;
@@ -66,35 +49,33 @@
     .submenu a:hover {
       text-decoration: underline;
     }
-    .content-section {
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      gap: 2em;
-      max-width: 1200px;
-      margin: 0 auto 3em auto;
-      flex-wrap: wrap;
+    h1 {
+      text-align: center;
+      font-size: 2.5em;
+      margin-bottom: 0.2em;
     }
-    .still-image {
-      max-width: 45%;
-      height: auto;
-      border-radius: 6px;
+    .subtitle, .meta, .synopsis {
+      text-align: center;
+      margin-bottom: 1em;
+    }
+    .meta {
+      font-style: italic;
+      font-size: 1em;
+      color: #444;
     }
     .synopsis {
-      flex: 1 1 45%;
+      max-width: 700px;
+      margin: 0 auto 2em auto;
       font-size: 1.1em;
       text-align: justify;
-      max-width: 700px;
     }
-    @media (max-width: 768px) {
-      .content-section {
-        flex-direction: column;
-        align-items: center;
-      }
-      .still-image, .synopsis {
-        max-width: 90%;
-        width: 100%;
-      }
+    .main-photo {
+      display: block;
+      margin: 2em auto 1.5em auto;
+      max-width: 700px;
+      width: 90%;
+      height: auto;
+      border-radius: 4px;
     }
   </style>
   <script>
@@ -121,18 +102,19 @@
       <a href="ferryman.html">Ferryman</a>
       <a href="cupboard-girl.html">Cupboard Girl</a>
     </div>
-    <a href="index.html#projects">Projects</a>
-    <a href="index.html#about">About</a>
+    <a href="projects.html">Projects</a>
+    <a href="about.html">About</a>
   </div>
+
   <h1>Hui Xiang Ou Ji</h1>
-  <div class="subtitle">(My Dear Dear Home)</div>
-  <div class="subtitle">Switzerland, 20’, 2025, Documentary</div>
-  <div class="credit-line">Writer / Director / Editor</div>
-  <div class="content-section">
-    <img class="still-image" src="hui-xiang-still.png" alt="Still from Hui Xiang Ou Ji">
-    <div class="synopsis">
-      After marrying her same-sex partner in Switzerland, Chinese director Yue returns home to film her interactions with her mother. Struggling to understand her daughter’s sexual orientation, the mother searches for answers. But an unexpected event makes the mother reflect on her own marriage, leading the estranged mother and daughter to finally start to have an honest conversation.
-    </div>
+  <div class="meta">(My Dear Dear Home)</div>
+  <div class="meta">Switzerland, 20’, 2025, Documentary</div>
+  <div class="meta">Writer / Director / Editor</div>
+
+  <img class="main-photo" src="hui-xiang-still.png" alt="Still from Hui Xiang Ou Ji">
+
+  <div class="synopsis">
+    After marrying her same-sex partner in Switzerland, Chinese director Yue returns home to film her interactions with her mother. Struggling to understand her daughter’s sexual orientation, the mother searches for answers. But an unexpected event makes the mother reflect on her own marriage, leading the estranged mother and daughter to finally start to have an honest conversation.
   </div>
 </body>
 </html>
