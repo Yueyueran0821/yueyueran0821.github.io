@@ -8,11 +8,17 @@
     html, body {
       margin: 0;
       padding: 0;
-      height: 100%;
-      width: 100%;
+      height: 100vh;
+      width: 100vw;
       font-family: Georgia, serif;
       color: black;
+      text-align: center;
       overflow: hidden;
+    }
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
     .background-video {
       position: fixed;
@@ -34,13 +40,11 @@
       z-index: -1;
     }
     .content {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+      position: relative;
       display: flex;
       flex-direction: column;
       align-items: center;
+      justify-content: center;
     }
     h1 {
       font-size: 3em;
@@ -48,4 +52,69 @@
     }
     .subtitle {
       font-size: 1.2em;
-      margin:
+      margin: 0.5em 0 2em 0;
+    }
+    .nav {
+      font-size: 1em;
+      display: flex;
+      gap: 2em;
+      position: relative;
+    }
+    .nav a, .nav span {
+      cursor: pointer;
+      text-decoration: none;
+      color: black;
+      position: relative;
+    }
+    .submenu {
+      position: absolute;
+      top: 1.5em;
+      left: 0;
+      display: none;
+      flex-direction: column;
+      gap: 0.3em;
+      font-size: 0.85em;
+      text-align: left;
+    }
+    .submenu a {
+      text-decoration: none;
+      color: black;
+    }
+    .submenu a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <iframe class="background-video" src="https://player.vimeo.com/video/1003104360?background=1&autoplay=1&loop=1&byline=0&title=0" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+  <div class="noise-overlay"></div>
+  <div class="content">
+    <h1>Yue RAN</h1>
+    <div class="subtitle">Director, Editor, Screenwriter</div>
+    <div class="nav">
+      <span onclick="toggleSubmenu()" id="filmsToggle">Films</span>
+      <a href="#projects">Projects</a>
+      <a href="#about">About</a>
+      <div class="submenu" id="filmSubmenu">
+        <a href="#hui-xiang-ou-ji">Hui Xiang Ou Ji</a>
+        <a href="#ferryman">Ferryman</a>
+        <a href="#cupboard-girl">Cupboard Girl</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleSubmenu() {
+      const submenu = document.getElementById("filmSubmenu");
+      if (submenu.style.display === "flex") {
+        submenu.style.display = "none";
+      } else {
+        submenu.style.display = "flex";
+        const toggle = document.getElementById("filmsToggle");
+        const rect = toggle.getBoundingClientRect();
+        submenu.style.left = rect.left + window.scrollX + "px";
+      }
+    }
+  </script>
+</body>
+</html>
