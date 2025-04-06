@@ -11,7 +11,7 @@
       padding: 0;
       height: 100%;
       width: 100%;
-      font-family: 'Playfair+Display', serif;
+      font-family: 'Playfair Display', serif;
       color: black;
       text-align: center;
       overflow: hidden;
@@ -113,8 +113,8 @@
           <a href="cupboard-girl.html">Cupboard Girl</a>
         </div>
       </span>
-      <a href="#projects">Projects</a>
-      <a href="#about">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="about.html">About</a>
     </div>
   </div>
 
@@ -122,6 +122,14 @@
     function toggleSubmenu() {
       const submenu = document.getElementById("filmSubmenu");
       submenu.style.display = submenu.style.display === "flex" ? "none" : "flex";
+    }
+    window.onclick = function(event) {
+      const submenu = document.getElementById("filmSubmenu");
+      if (!event.target.matches('#filmsToggle')) {
+        if (submenu && submenu.style.display === "flex") {
+          submenu.style.display = "none";
+        }
+      }
     }
   </script>
 </body>
