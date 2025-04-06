@@ -56,7 +56,7 @@
     }
     .project {
       max-width: 1000px;
-      margin: 0 auto 3em auto;
+      margin: 0 auto 4em auto;
     }
     .project h2 {
       font-size: 1.8em;
@@ -76,10 +76,16 @@
       text-align: center;
     }
     iframe {
-      width: 90%;
+      width: 100%;
       max-width: 960px;
       height: 540px;
       border-radius: 8px;
+    }
+    @media (max-width: 768px) {
+      iframe {
+        width: 100%;
+        height: 220px;
+      }
     }
   </style>
   <script>
@@ -114,7 +120,7 @@
 
   <div class="project">
     <h2>Sun, Storm, a Little Girl</h2>
-    <div class="meta">China, 80’, Documentary, 2024</div>
+    <div class="meta">China, 80’, Documentary, TBD</div>
     <div class="meta">Role: Editor · Director: Erni</div>
     <p>
       Erni, a girl from Chengdu, embarked on a three-year sailing adventure with theater actors from across Europe. Along the way, she documented their performances of The Odyssey while reflecting on her own reasons for leaving her hometown in her youth. As the journey unfolded, she encountered diverse migrants and drifters, and through these experiences, she gradually opened her heart, embarking on a path of self-reconciliation.
@@ -123,5 +129,18 @@
       <iframe src="https://player.vimeo.com/video/1001589689" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
     </div>
   </div>
+
+  <div class="project">
+    <h2>Adam – Foune Curry</h2>
+    <div class="meta">France, Music Video, 2023</div>
+    <div class="meta">Role: Videographer / Editor</div>
+    <p>
+      A music video for the punk band Foune Curry's song "Adam". Directed and edited with raw visual style capturing the gritty and rebellious energy of the band.
+    </p>
+    <div class="video">
+      <iframe src="https://www.youtube.com/embed/QWCtkf7X9sI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </div>
+
 </body>
 </html>
